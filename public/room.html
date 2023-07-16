@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SignCall</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css.map">
+    <link rel="stylesheet" href="css/style.scss">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/7433d3320f.js" crossorigin="anonymous"></script>
+    <script>
+        const params = new URLSearchParams(location.search);
+        if (!params.get("room")) location.href = "/";
+    </script>
+
+    <style>
+        .video-frame {
+          aspect-ratio: 16/9;
+        }
+      </style>
+</head>
+
+<body>
+    <div class="overlay" id="overlay">
+        <div class="box">
+            <div class="head-name">Enter a Name</div>
+            <input type="text" class="name-field" placeholder="Type here.." id="name-field"/><br>
+            <button class="continue-name">Continue</button>
+
+        </div>
+    </div>
+
+    <div class="container-room">
+
+        <div class="left-cont">
+
+            <div class="video-cont-single" id="vcont">
+                <div class="video-box">
+                    <video class="video-frame" id="vd1" autoplay playsinline>
+                    </video>
+                    <div class="nametag" id="myname">yourname</div>
+                    <div class="mute-icon" id="mymuteicon"><i class="fas fa-microphone-slash"></i></div>
+                    <div class="video-off" id="myvideooff">Video Off</div>
+                </div>
+            </div>
+
+            <div class="whiteboard-cont"><canvas id="whiteboard" height="1000" width="1000"></canvas>
+                <div class="colors-cont">
+                    <div class="black" onclick="setColor('black')"></div>
+                    <div class="red" onclick="setColor('#e74c3c')"></div>
+                    <div class="yellow" onclick="setColor('#f1c40f')"></div>
+                    <div class="green" onclick="setColor('#badc58')"></div>
+                    <div class="blue" onclick="setColor('#3498db')"></div>
+                    <div class="orange" onclick="setColor('#e67e22')"></div>
+                    <div class="purple" onclick="setColor('#9b59b6')"></div>
+                    <div class="pink" onclick="setColor('#fd79a8')"></div>
+                    <div class="brown" onclick="setColor('#834c32')"></div>
+                    <div class="grey" onclick="setColor('gray')"></div>
+                    <div class="eraser" onclick="setEraser()"><i class="fas fa-eraser"></i></div>
+                    <div class="clearboard" onclick="clearBoard()"><i class="fas fa-trash-alt"></i></div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="utils">
+                  <div class="audio">
+                    <i class="fas fa-microphone"></i>
+                    <span class="overlay-text">Audio</span>
+                  </div>
+                  <div class="novideo">
+                    <i class="fas fa-video"></i>
+                    <span class="overlay-text">Video</span>
+                  </div>
+                  <div class="chat-msg" onclick="toggleChatContainer()">
+                    <i class="fas fa-comment"></i>
+                    <span class="overlay-text">Chat</span>
+                  </div>
+                  <div class="chat-msg" onclick="CopyClassText()">
+                    <i class="fa-regular fa-copy"></i>
+                    <span class="overlay-text">Copy</span>
+                  </div>
+                  <div class="screenshare">
+                    <i class="fas fa-desktop"></i>
+                    <span class="overlay-text">Screen Share</span>
+                  </div>
+                  <div class="board-icon">
+                    <i class="fas fa-chalkboard"></i>
+                    <span class="overlay-text">Whiteboard</span>
+                  </div>
+                  <div class="cutcall">
+                    <i class="fas fa-phone-slash"></i>
+                    <span class="overlay-text">End Call</span>
+                  </div>
+                </div>
+              </div>
+              
+
+
+        </div>
+
+        <div id="chat-container" class="right-cont">
+            <div class="head-title">
+
+                <div class="chats"><i class="fas fa-comment-alt mr-1"></i>Chats</div>
+            </div>
+            <span class="roomcode mt-5"></span>
+            <div class="chat-cont">
+
+            </div>
+            <div class="chat-input-cont">
+                <div class="ci-cont"><input type="text" class="chat-input" placeholder="Type chat here.."></div>
+                <div class="ci-send"><button class="chat-send">Send</button></div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/room.js"></script>
+</body>
+
+</html>
