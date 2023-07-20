@@ -12,7 +12,7 @@ A simple Video meeting app in which you can easily start meeting anytime , with 
 - Easy to meet
 
 ## Demo
-https://signcall-webservice.onrender.com/
+https://signcall.onrender.com/
 
 To view How website Look's Like click on the above link
 ## Screenshots
