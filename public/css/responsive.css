@@ -1,0 +1,127 @@
+@media(max-width:480px) {
+    .home-text {
+        width: auto !important;
+    }
+    .grids {
+        display: flex;
+        flex-direction: column-reverse;
+        row-gap: 3rem;
+        column-gap: 3rem;
+        margin-bottom: 9.6rem;
+      } 
+    .footer-48201 {
+        display: none;
+    }
+    .step-img-box {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+      }
+      .heading-tertiary {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .step-description {
+        font-size: 1rem;
+      }
+
+      .step-img-box::before {
+        width: 50%;
+        padding-bottom: 50%;
+        z-index: -2;
+      }
+      
+      .step-img-box::after {
+        width: 35%;
+        padding-bottom: 40%;
+        /* background-color: #fae5d3; */
+        background-color: #00cdac;
+        z-index: -1;
+      }
+}
+
+@media (max-width:1023px) {
+
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+    .grids {
+        display: flex;
+        flex-direction: column-reverse;
+        row-gap: 5rem;
+        column-gap: 3rem;
+        margin-bottom: 9.6rem;
+      } 
+      .step-img-box::before {
+        width: 50%;
+        padding-bottom: 50%;
+        z-index: -2;
+      }
+      
+      .step-img-box::after {
+        width: 35%;
+        padding-bottom: 40%;
+        /* background-color: #fae5d3; */
+        background-color: #00cdac;
+        z-index: -1;
+      }
+    .premium_meeting {
+        padding-right: 0px !important;
+        width: 100% !important;
+    }
+
+    .start_meeting {
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    .start_meeting>button {
+        margin-bottom: 5px;
+    }
+
+    #first-image {
+        margin-right: 0px;
+    }
+
+    .first-image-parent {
+        display: flex;
+        justify-content: end;
+    }
+}
+
+@media (max-width:1200px) {
+    .start_meeting {
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    .start_meeting>button {
+        margin-bottom: 5px;
+    }
+
+}
+
+@media (min-width:1201px) {
+    .premium_meeting {
+        padding-right: 0px !important;
+    }
+
+    .start_meeting {
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    .start_meeting>button {
+        margin-bottom: 5px;
+    }
+}
+
+@media (min-width:1300px) {
+    .start_meeting>button {
+        margin-bottom: 5px;
+    }
+}
